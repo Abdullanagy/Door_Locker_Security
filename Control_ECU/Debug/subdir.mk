@@ -4,7 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Control_ECU.c \
+../APP.c \
 ../DC_motor.c \
 ../External_eeprom.c \
 ../buzzer.c \
@@ -14,7 +14,7 @@ C_SRCS += \
 ../uart.c 
 
 OBJS += \
-./Control_ECU.o \
+./APP.o \
 ./DC_motor.o \
 ./External_eeprom.o \
 ./buzzer.o \
@@ -24,7 +24,7 @@ OBJS += \
 ./uart.o 
 
 C_DEPS += \
-./Control_ECU.d \
+./APP.d \
 ./DC_motor.d \
 ./External_eeprom.d \
 ./buzzer.d \

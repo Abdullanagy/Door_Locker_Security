@@ -5,21 +5,21 @@ c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
                               c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o (exit)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
-                              ./Control_ECU.o (__do_copy_data)
+                              ./APP.o (__do_copy_data)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
-                              ./Control_ECU.o (__do_clear_bss)
+                              ./APP.o (__do_clear_bss)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
-                              ./Control_ECU.o (__fixunssfsi)
+                              ./APP.o (__fixunssfsi)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
                               c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o) (__subsf3)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mul_sf.o)
-                              ./Control_ECU.o (__mulsf3)
+                              ./APP.o (__mulsf3)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_gt_sf.o)
-                              ./Control_ECU.o (__gtsf2)
+                              ./APP.o (__gtsf2)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ge_sf.o)
                               c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o) (__gesf2)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_lt_sf.o)
-                              ./Control_ECU.o (__ltsf2)
+                              ./APP.o (__ltsf2)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_sf_to_si.o)
                               c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o) (__fixsfsi)
 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
@@ -38,9 +38,9 @@ c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fpcmp_parts_sf.o)
 Allocating common symbols
 Common symbol       size              file
 
-state               0x1               ./Control_ECU.o
-value2              0x5               ./Control_ECU.o
-value1              0x5               ./Control_ECU.o
+state               0x1               ./APP.o
+value2              0x5               ./APP.o
+value1              0x5               ./APP.o
 
 Memory Configuration
 
@@ -56,7 +56,7 @@ signature        0x00840000         0x00000400         rw !x
 Linker script and memory map
 
 LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
-LOAD ./Control_ECU.o
+LOAD ./APP.o
 LOAD ./DC_motor.o
 LOAD ./External_eeprom.o
 LOAD ./buzzer.o
@@ -158,7 +158,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x2f64
+.text           0x00000000     0x2f96
  *(.vectors)
  .vectors       0x00000000       0x54 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
                 0x00000000                __vectors
@@ -232,7 +232,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                 0x0000008e                __vector_16
                 0x0000008e                __vector_18
                 0x0000008e                __vector_20
- .text          0x00000092        0x0 ./Control_ECU.o
+ .text          0x00000092        0x0 ./APP.o
  .text          0x00000092        0x0 ./DC_motor.o
  .text          0x00000092        0x0 ./External_eeprom.o
  .text          0x00000092        0x0 ./buzzer.o
@@ -270,140 +270,140 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                 0x00000a94                __fpcmp_parts_f
                 0x00000b46                . = ALIGN (0x2)
  *(.text.*)
- .text.Timer    0x00000b46       0x18 ./Control_ECU.o
+ .text.Timer    0x00000b46       0x18 ./APP.o
                 0x00000b46                Timer
- .text.delay    0x00000b5e       0x82 ./Control_ECU.o
+ .text.delay    0x00000b5e       0x82 ./APP.o
                 0x00000b5e                delay
  .text.creat_pass
-                0x00000be0      0x766 ./Control_ECU.o
+                0x00000be0      0x760 ./APP.o
                 0x00000be0                creat_pass
  .text.main_option
-                0x00001346      0x112 ./Control_ECU.o
-                0x00001346                main_option
+                0x00001340      0x112 ./APP.o
+                0x00001340                main_option
  .text.check_reenter_pass
-                0x00001458      0x714 ./Control_ECU.o
-                0x00001458                check_reenter_pass
+                0x00001452      0x714 ./APP.o
+                0x00001452                check_reenter_pass
  .text.open_Door
-                0x00001b6c       0x3a ./Control_ECU.o
-                0x00001b6c                open_Door
+                0x00001b66       0x3a ./APP.o
+                0x00001b66                open_Door
  .text.change_password
-                0x00001ba6       0x12 ./Control_ECU.o
-                0x00001ba6                change_password
+                0x00001ba0       0x12 ./APP.o
+                0x00001ba0                change_password
  .text.buzzer_error
-                0x00001bb8       0x40 ./Control_ECU.o
-                0x00001bb8                buzzer_error
- .text.main     0x00001bf8      0x1d6 ./Control_ECU.o
-                0x00001bf8                main
+                0x00001bb2       0x40 ./APP.o
+                0x00001bb2                buzzer_error
+ .text.main     0x00001bf2      0x1d6 ./APP.o
+                0x00001bf2                main
  .text.DCMotor_Init
-                0x00001dce       0x46 ./DC_motor.o
-                0x00001dce                DCMotor_Init
+                0x00001dc8       0x46 ./DC_motor.o
+                0x00001dc8                DCMotor_Init
  .text.DCMotor_Rotate
-                0x00001e14       0x82 ./DC_motor.o
-                0x00001e14                DCMotor_Rotate
+                0x00001e0e       0x82 ./DC_motor.o
+                0x00001e0e                DCMotor_Rotate
  .text.DCMotor_deInit
-                0x00001e96       0x38 ./DC_motor.o
-                0x00001e96                DCMotor_deInit
+                0x00001e90       0x38 ./DC_motor.o
+                0x00001e90                DCMotor_deInit
  .text.EEPROM_writeArray
-                0x00001ece      0x1a6 ./External_eeprom.o
-                0x00001ece                EEPROM_writeArray
+                0x00001ec8      0x1a6 ./External_eeprom.o
+                0x00001ec8                EEPROM_writeArray
  .text.EEPROM_readArray
-                0x00002074      0x1f4 ./External_eeprom.o
-                0x00002074                EEPROM_readArray
+                0x0000206e      0x1f4 ./External_eeprom.o
+                0x0000206e                EEPROM_readArray
  .text.Buzzer_init
-                0x00002268       0x2a ./buzzer.o
-                0x00002268                Buzzer_init
+                0x00002262       0x46 ./buzzer.o
+                0x00002262                Buzzer_init
  .text.Buzzer_on
-                0x00002292       0x1c ./buzzer.o
-                0x00002292                Buzzer_on
+                0x000022a8       0x2a ./buzzer.o
+                0x000022a8                Buzzer_on
  .text.Buzzer_off
-                0x000022ae       0x1c ./buzzer.o
-                0x000022ae                Buzzer_off
+                0x000022d2       0x2a ./buzzer.o
+                0x000022d2                Buzzer_off
  .text.GPIO_setupPinDirection
-                0x000022ca      0x1d6 ./gpio.o
-                0x000022ca                GPIO_setupPinDirection
+                0x000022fc      0x1d6 ./gpio.o
+                0x000022fc                GPIO_setupPinDirection
  .text.GPIO_writePin
-                0x000024a0      0x1d6 ./gpio.o
-                0x000024a0                GPIO_writePin
+                0x000024d2      0x1d6 ./gpio.o
+                0x000024d2                GPIO_writePin
  .text.GPIO_readPin
-                0x00002676      0x136 ./gpio.o
-                0x00002676                GPIO_readPin
+                0x000026a8      0x136 ./gpio.o
+                0x000026a8                GPIO_readPin
  .text.GPIO_setupPortDirection
-                0x000027ac       0x88 ./gpio.o
-                0x000027ac                GPIO_setupPortDirection
+                0x000027de       0x88 ./gpio.o
+                0x000027de                GPIO_setupPortDirection
  .text.GPIO_writePort
-                0x00002834       0x88 ./gpio.o
-                0x00002834                GPIO_writePort
+                0x00002866       0x88 ./gpio.o
+                0x00002866                GPIO_writePort
  .text.GPIO_readPort
-                0x000028bc       0x8a ./gpio.o
-                0x000028bc                GPIO_readPort
+                0x000028ee       0x8a ./gpio.o
+                0x000028ee                GPIO_readPort
  .text.__vector_9
-                0x00002946       0x66 ./timer1.o
-                0x00002946                __vector_9
+                0x00002978       0x66 ./timer1.o
+                0x00002978                __vector_9
  .text.__vector_7
-                0x000029ac       0x66 ./timer1.o
-                0x000029ac                __vector_7
+                0x000029de       0x66 ./timer1.o
+                0x000029de                __vector_7
  .text.__vector_8
-                0x00002a12       0x66 ./timer1.o
-                0x00002a12                __vector_8
+                0x00002a44       0x66 ./timer1.o
+                0x00002a44                __vector_8
  .text.Timer1_init
-                0x00002a78       0xc0 ./timer1.o
-                0x00002a78                Timer1_init
+                0x00002aaa       0xc0 ./timer1.o
+                0x00002aaa                Timer1_init
  .text.Timer1_deInit
-                0x00002b38       0x20 ./timer1.o
-                0x00002b38                Timer1_deInit
+                0x00002b6a       0x20 ./timer1.o
+                0x00002b6a                Timer1_deInit
  .text.Timer1_setCallBack
-                0x00002b58       0x24 ./timer1.o
-                0x00002b58                Timer1_setCallBack
+                0x00002b8a       0x24 ./timer1.o
+                0x00002b8a                Timer1_setCallBack
  .text.TWI_init
-                0x00002b7c       0x2c ./twi.o
-                0x00002b7c                TWI_init
+                0x00002bae       0x2c ./twi.o
+                0x00002bae                TWI_init
  .text.TWI_start
-                0x00002ba8       0x20 ./twi.o
-                0x00002ba8                TWI_start
+                0x00002bda       0x20 ./twi.o
+                0x00002bda                TWI_start
  .text.TWI_stop
-                0x00002bc8       0x16 ./twi.o
-                0x00002bc8                TWI_stop
+                0x00002bfa       0x16 ./twi.o
+                0x00002bfa                TWI_stop
  .text.TWI_writeByte
-                0x00002bde       0x2e ./twi.o
-                0x00002bde                TWI_writeByte
+                0x00002c10       0x2e ./twi.o
+                0x00002c10                TWI_writeByte
  .text.TWI_readByteWithACK
-                0x00002c0c       0x26 ./twi.o
-                0x00002c0c                TWI_readByteWithACK
+                0x00002c3e       0x26 ./twi.o
+                0x00002c3e                TWI_readByteWithACK
  .text.TWI_readByteWithNACK
-                0x00002c32       0x26 ./twi.o
-                0x00002c32                TWI_readByteWithNACK
+                0x00002c64       0x26 ./twi.o
+                0x00002c64                TWI_readByteWithNACK
  .text.TWI_getStatus
-                0x00002c58       0x1e ./twi.o
-                0x00002c58                TWI_getStatus
+                0x00002c8a       0x1e ./twi.o
+                0x00002c8a                TWI_getStatus
  .text.UART_init
-                0x00002c76      0x114 ./uart.o
-                0x00002c76                UART_init
+                0x00002ca8      0x114 ./uart.o
+                0x00002ca8                UART_init
  .text.UART_sendByte
-                0x00002d8a       0x2e ./uart.o
-                0x00002d8a                UART_sendByte
+                0x00002dbc       0x2e ./uart.o
+                0x00002dbc                UART_sendByte
  .text.UART_recieveByte
-                0x00002db8       0x1e ./uart.o
-                0x00002db8                UART_recieveByte
+                0x00002dea       0x1e ./uart.o
+                0x00002dea                UART_recieveByte
  .text.UART_sendString
-                0x00002dd6       0x52 ./uart.o
-                0x00002dd6                UART_sendString
+                0x00002e08       0x52 ./uart.o
+                0x00002e08                UART_sendString
  .text.UART_receiveString
-                0x00002e28       0x86 ./uart.o
-                0x00002e28                UART_receiveString
- .text.libgcc   0x00002eae       0x44 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
-                0x00002eae                __udivmodsi4
- .text.libgcc   0x00002ef2        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x00002ef2        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x00002ef2        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc   0x00002ef2       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
-                0x00002ef2                __prologue_saves__
- .text.libgcc   0x00002f2a       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
-                0x00002f2a                __epilogue_restores__
-                0x00002f60                . = ALIGN (0x2)
+                0x00002e5a       0x86 ./uart.o
+                0x00002e5a                UART_receiveString
+ .text.libgcc   0x00002ee0       0x44 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                0x00002ee0                __udivmodsi4
+ .text.libgcc   0x00002f24        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00002f24        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00002f24        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00002f24       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+                0x00002f24                __prologue_saves__
+ .text.libgcc   0x00002f5c       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+                0x00002f5c                __epilogue_restores__
+                0x00002f92                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00002f60        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x00002f60                exit
-                0x00002f60                _exit
+ .fini9         0x00002f92        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00002f92                exit
+                0x00002f92                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -422,15 +422,15 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00002f60        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x00002f92        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00002f64                _etext = .
+                0x00002f96                _etext = .
 
-.data           0x00800060       0x18 load address 0x00002f64
+.data           0x00800060       0x18 load address 0x00002f96
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
- .data          0x00800060        0x0 ./Control_ECU.o
+ .data          0x00800060        0x0 ./APP.o
  .data          0x00800060        0x0 ./DC_motor.o
  .data          0x00800060        0x0 ./External_eeprom.o
  .data          0x00800060        0x0 ./buzzer.o
@@ -457,28 +457,28 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .data          0x00800068        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_unpack_sf.o)
  .data          0x00800068        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fpcmp_parts_sf.o)
  *(.data*)
- .data.check    0x00800068        0x1 ./Control_ECU.o
+ .data.check    0x00800068        0x1 ./APP.o
                 0x00800068                check
  .data.counter1
-                0x00800069        0x1 ./Control_ECU.o
+                0x00800069        0x1 ./APP.o
                 0x00800069                counter1
  *(.rodata)
  *(.rodata*)
- .rodata.C.2.1363
-                0x0080006a        0x6 ./Control_ECU.o
+ .rodata.C.2.1364
+                0x0080006a        0x6 ./APP.o
  .rodata.C.15.1561
-                0x00800070        0x7 ./Control_ECU.o
+                0x00800070        0x7 ./APP.o
  *(.gnu.linkonce.d*)
                 0x00800078                . = ALIGN (0x2)
  *fill*         0x00800077        0x1 00
                 0x00800078                _edata = .
                 0x00800078                PROVIDE (__data_end, .)
 
-.bss            0x00800078       0x10
+.bss            0x00800078       0x11
                 0x00800078                PROVIDE (__bss_start, .)
  *(.bss)
  .bss           0x00800078        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
- .bss           0x00800078        0x0 ./Control_ECU.o
+ .bss           0x00800078        0x0 ./APP.o
  .bss           0x00800078        0x0 ./DC_motor.o
  .bss           0x00800078        0x0 ./External_eeprom.o
  .bss           0x00800078        0x0 ./buzzer.o
@@ -505,29 +505,31 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .bss           0x00800078        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fpcmp_parts_sf.o)
  *(.bss*)
  .bss.operation
-                0x00800078        0x1 ./Control_ECU.o
+                0x00800078        0x1 ./APP.o
                 0x00800078                operation
- .bss.g_count   0x00800079        0x1 ./Control_ECU.o
+ .bss.g_count   0x00800079        0x1 ./APP.o
                 0x00800079                g_count
- .bss.flag      0x0080007a        0x1 ./timer1.o
-                0x0080007a                flag
+ .bss.flagg     0x0080007a        0x1 ./APP.o
+                0x0080007a                flagg
+ .bss.flag      0x0080007b        0x1 ./timer1.o
+                0x0080007b                flag
  .bss.g_callBack_ptr
-                0x0080007b        0x2 ./timer1.o
+                0x0080007c        0x2 ./timer1.o
  *(COMMON)
- COMMON         0x0080007d        0xb ./Control_ECU.o
-                0x0080007d                state
-                0x0080007e                value2
-                0x00800083                value1
-                0x00800088                PROVIDE (__bss_end, .)
-                0x00002f64                __data_load_start = LOADADDR (.data)
-                0x00002f7c                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x0080007e        0xb ./APP.o
+                0x0080007e                state
+                0x0080007f                value2
+                0x00800084                value1
+                0x00800089                PROVIDE (__bss_end, .)
+                0x00002f96                __data_load_start = LOADADDR (.data)
+                0x00002fae                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800088        0x0
-                0x00800088                PROVIDE (__noinit_start, .)
+.noinit         0x00800089        0x0
+                0x00800089                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00800088                PROVIDE (__noinit_end, .)
-                0x00800088                _end = .
-                0x00800088                PROVIDE (__heap_start, .)
+                0x00800089                PROVIDE (__noinit_end, .)
+                0x00800089                _end = .
+                0x00800089                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -545,27 +547,27 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .signature
  *(.signature*)
 
-.stab           0x00000000     0x2e14
+.stab           0x00000000     0x2e50
  *(.stab)
- .stab          0x00000000     0x1440 ./Control_ECU.o
- .stab          0x00001440      0x2ac ./DC_motor.o
+ .stab          0x00000000     0x144c ./APP.o
+ .stab          0x0000144c      0x2ac ./DC_motor.o
                                 0x510 (size before relaxing)
- .stab          0x000016ec      0x564 ./External_eeprom.o
+ .stab          0x000016f8      0x564 ./External_eeprom.o
                                 0x78c (size before relaxing)
- .stab          0x00001c50      0x1c8 ./buzzer.o
-                                0x420 (size before relaxing)
- .stab          0x00001e18      0x5e8 ./gpio.o
+ .stab          0x00001c5c      0x1f8 ./buzzer.o
+                                0x450 (size before relaxing)
+ .stab          0x00001e54      0x5e8 ./gpio.o
                                 0x870 (size before relaxing)
- .stab          0x00002400      0x33c ./timer1.o
+ .stab          0x0000243c      0x33c ./timer1.o
                                 0x5d0 (size before relaxing)
- .stab          0x0000273c      0x33c ./twi.o
+ .stab          0x00002778      0x33c ./twi.o
                                 0x588 (size before relaxing)
- .stab          0x00002a78      0x39c ./uart.o
+ .stab          0x00002ab4      0x39c ./uart.o
                                 0x648 (size before relaxing)
 
-.stabstr        0x00000000     0x121a
+.stabstr        0x00000000     0x1217
  *(.stabstr)
- .stabstr       0x00000000     0x121a ./Control_ECU.o
+ .stabstr       0x00000000     0x1217 ./APP.o
 
 .stab.excl
  *(.stab.excl)

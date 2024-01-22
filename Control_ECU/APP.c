@@ -25,7 +25,7 @@ uint8 counter1=1;
 uint8 value1[5];
 uint8 value2[5];
 uint8 g_count = 0 ;
-
+uint8 flagg=0;
 /*********************************************************************************
  *                            Users Function                                  *
  ********************************************************************************/
@@ -51,7 +51,8 @@ void delay(uint8 second)
 
 
 void creat_pass(void){
-/********************* RECEIVE THE PASSWORD FROM HMI_ECU    */
+	/********************* RECEIVE THE PASSWORD FROM HMI_ECU    */
+
 	for(int i=0;i<5;i++){
 		value1[i]=UART_recieveByte();
 		_delay_ms(10);
@@ -61,7 +62,7 @@ void creat_pass(void){
 		_delay_ms(10);
 	}
 
-/****************check if the entered passwords are same or not *************/
+	/****************check if the entered passwords are same or not *************/
 	check=1;
 	for(int i=0;i<5;i++){
 		if(value1[i]!=value2[i]){
@@ -71,25 +72,22 @@ void creat_pass(void){
 
 	}
 	_delay_ms(50);
-/************** Send the result of check process  *************/
+	/************** Send the result of check process  *************/
 	UART_sendByte(check);
 	_delay_ms(100);
 	/************** SAVE the password at the external EEPROM if check==1   */
 	if (check==1){
-
+		flagg=0;
 		/* Initialize the TWI/I2C Driver */
 		TWI_init();
 		EEPROM_writeArray((0x0311),value1,5); /* Write 0x0F in the external EEPROM */
 		_delay_ms(100);
 
 	}
-	else{Timer1_setCallBack(creat_pass);}
-
-
 }
 
 void main_option(void){
-/****** RECEIVE the required operation from the HMI_ECU */
+	/****** RECEIVE the required operation from the HMI_ECU */
 	operation=UART_recieveByte();
 	_delay_ms(50);
 }
@@ -97,13 +95,13 @@ void main_option(void){
 void check_reenter_pass(void){
 
 	uint8 value3[5];
-/************* RECEIVE the re-entered password from HMI_ECU ****************/
+	/************* RECEIVE the re-entered password from HMI_ECU ****************/
 	for(int i=0;i<5;i++){
 		value3[i]=UART_recieveByte();
 		_delay_ms(20);
 	}
 	_delay_ms(50);
-/************ read the password already saved at external eeprom to compare it with the received re-entered password */
+	/************ read the password already saved at external eeprom to compare it with the received re-entered password */
 	TWI_init();
 	EEPROM_readArray((0x0311),&value1,5); /* Write 0x0F in the external EEPROM */
 	_delay_ms(100);
@@ -121,12 +119,9 @@ void check_reenter_pass(void){
 
 	}
 	_delay_ms(50);
-/********** send the result of check process for HMI_ECU */
+	/********** send the result of check process for HMI_ECU */
 	UART_sendByte(check);
 	_delay_ms(100);
-
-
-
 
 }
 
@@ -142,11 +137,11 @@ void open_Door(void){
 	delay(15);
 	/*********** DC_motor  "stop_15_Seconds" *************/
 	DCMotor_Rotate(stop);
-	delay(15);
+	delay(5);
 	/*********** DC_motor  "Rotate_Anti_Clock_Wise_15_Seconds" *************/
 	DCMotor_Rotate(ACW);
 	delay(15);
-/************* De_intialization for DC Motor *************/
+	/************* De_intialization for DC Motor *************/
 	DCMotor_deInit();
 	/*************** call the main_option function *************/
 	main_option();
@@ -154,17 +149,17 @@ void open_Door(void){
 }
 
 void change_password(void){
-/************** call the creat_pass function ***************/
+	/************** call the creat_pass function ***************/
 	creat_pass();
 }
 void buzzer_error(void){
-/****************** Turn ON Buzzer ****************/
+	/****************** Turn ON Buzzer ****************/
 	Buzzer_on();
 	//delay 62 seconds
-	for(int i=0;i<62;i++){
+	for(int i=0;i<11;i++){
 		delay(1);
 	}
-/*********** Turn OFF Buzzer *****************/
+	/*********** Turn OFF Buzzer *****************/
 	Buzzer_off();
 	/********* re-call the main_option function */
 	main_option();
@@ -180,7 +175,7 @@ int main(void)
 	Timer1_setCallBack(Timer); /* Setup CallBAck Function For Timer */
 	UART_configType  configurations ={eight_bits,disable,one_bit,9600};//set the value of configuration
 	UART_init(&configurations);//initialization the UART
-_delay_ms(50);
+	_delay_ms(50);
 	UART_sendByte(MC2_Ready); /* Send to 1st MCU That MCU2 is Ready To Receive */
 
 	while(1)
